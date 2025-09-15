@@ -3,9 +3,14 @@ import { type MarathonFormState } from "../libs/Store";
 export const useMarathonFormStore = create<MarathonFormState>((set) => ({
   fname: "",
   lname: "",
+  password:"",
+  confirmPass:"",
   plan: "funrun",
   gender: "male",
   email: "",
+  total:500,
+  hasCoupon:false,
+  couponCode:"",
   setFname: (fname) =>
     set(() => ({
       fname: fname,
@@ -14,6 +19,32 @@ export const useMarathonFormStore = create<MarathonFormState>((set) => ({
     set(() => ({
       lname: _lname,
     })),
+
+    setPassword: (_password)=>
+      set(()=>({
+        password:_password,
+      })),
+
+    setConfirmPass: (_confirmPass)=>
+      set(()=>({
+         confirmPass: _confirmPass, 
+      })),
+
+      setTotal: (_total)=>
+        set(()=>({
+          total: _total,
+        })),
+
+      setHasCoupon:(_hasCoupon)=>
+        set(()=>({
+          hasCoupon: _hasCoupon,
+        })),
+
+      setCouponCode:(_couponCode)=>
+        set(()=>({
+          couponCode: _couponCode,
+        })),
+
   setPlan: (_plan) =>
     set(() => ({
       plan: _plan,
